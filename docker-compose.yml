@@ -32,6 +32,7 @@ services:
     env_file: .env
     ports:
       - 3000:3000
+      - 24678:24678
     depends_on:
       - sa-backend
     restart: always

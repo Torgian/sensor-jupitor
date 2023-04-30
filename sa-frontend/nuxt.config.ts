@@ -14,6 +14,12 @@ export default defineNuxtConfig({
     ],
     
     vite: {
+      server: {
+        hmr: {
+          protocol: 'ws',
+          host: 'localhost',
+        }
+      },
       define: {
         'process.env.DEBUG': false,
       },

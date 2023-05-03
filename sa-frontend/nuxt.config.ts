@@ -5,6 +5,12 @@ export default defineNuxtConfig({
         '@mdi/font/css/materialdesignicons.min.css',
     ],
 
+    // Sourcemap is set to false to avoid warnings for Vuetify .mjs sourcemap issues
+    sourcemap: {
+      "server": false,
+      "client": false,
+    },
+
     build: {
       transpile: ['vuetify'],
     },
@@ -17,7 +23,6 @@ export default defineNuxtConfig({
       server: {
         hmr: {
           protocol: 'ws',
-          host: 'localhost',
         }
       },
       define: {

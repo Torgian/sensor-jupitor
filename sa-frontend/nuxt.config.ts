@@ -5,6 +5,12 @@ export default defineNuxtConfig({
         '@mdi/font/css/materialdesignicons.min.css',
     ],
 
+    runtimeConfig: {
+      public: {
+        baseURL: 'http://127.0.0.1:8000/api/v1.0/',
+      }
+    },
+
     // Sourcemap is set to false to avoid warnings for Vuetify .mjs sourcemap issues
     sourcemap: {
       "server": false,

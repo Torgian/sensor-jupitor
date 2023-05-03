@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { useAPIFetch } from '~/composables/useAPIFetch'
 import { Sensors } from '~/composables/useSensors'
 
 export const useSensorStore = defineStore('sensorsStore', () => {
@@ -8,12 +9,12 @@ export const useSensorStore = defineStore('sensorsStore', () => {
     })
 
     const getSensors = async() => {
-        const sensorData:Sensors = await $fetch('http://localhost:8000/api/v1.0/Sensors')
+        const sensorData: Sensors[]|null = (await useAPIFetch<Sensors[]>('/Sensors').data.value)
         console.log('sensor datas', sensorData)
-
-        sensorList.value["@iot.count"] = sensorData["@iot.count"]
-        sensorList.value.value.push(...sensorData.value)
-
+        // if (sensorData) {
+        //     sensorList.value["@iot.count"] = sensorData["@iot.count"]
+        //     sensorList.value.value.push(...sensorData.value)
+        // }
     }
 
     return { getSensors, sensorList }

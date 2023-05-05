@@ -8,7 +8,9 @@ There are currently some issues with the frontend.
 
 ### Docker instructions.
 
-Pretty straightforward. Simply run `docker compose up`.
+Pretty straightforward.
+
+Simply run `docker compose build` and then `docker compose up`.
 
 All the settings are housed in the Dockerfile and docker-compose.yml files. 
 
@@ -19,5 +21,6 @@ There is also a dockerfile in the sa-frontend folder.
 FOr database migrations, run the following:
 
 `docker compose exec sa-backend python manage.py makemigrations sensorAtlas`
+
 `docker compose exec sa-backend python manage.py migrate`
 

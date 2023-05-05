@@ -23,7 +23,6 @@ export default defineComponent({
         useAsyncData(async() => await sensorsStore.getSensors())
 
         const sensors = ref<Sensors>(sensorsStore.sensorList)
-        console.log(sensors)
 
         return {
             sensors

@@ -1,5 +1,6 @@
+
 import { defineStore } from 'pinia'
-import { useAPIFetch } from '~/composables/useAPIFetch'
+
 import { Sensors } from '~/composables/useSensors'
 
 export const useSensorStore = defineStore('sensorsStore', () => {
@@ -8,13 +9,19 @@ export const useSensorStore = defineStore('sensorsStore', () => {
         "value": []
     })
 
+    const { $apiURL } = useNuxtApp()
     const getSensors = async() => {
-        const sensorData: Sensors[]|null = (await useAPIFetch<Sensors[]>('/Sensors').data.value)
-        console.log('sensor datas', sensorData)
-        // if (sensorData) {
-        //     sensorList.value["@iot.count"] = sensorData["@iot.count"]
-        //     sensorList.value.value.push(...sensorData.value)
-        // }
+        const url = `${$apiURL}/Sensors`
+
+        sensorList.value["@iot.count"] = 0
+        sensorList.value.value = []
+
+        const sensorData: Sensors|null = await $fetch(url)
+
+        if (sensorData) {
+            sensorList.value["@iot.count"] = sensorData["@iot.count"]
+            sensorList.value.value.push(...sensorData.value)
+        }
     }
 
     return { getSensors, sensorList }

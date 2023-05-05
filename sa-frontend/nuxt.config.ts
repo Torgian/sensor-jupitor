@@ -29,7 +29,13 @@ export default defineNuxtConfig({
       server: {
         hmr: {
           protocol: 'ws',
-        }
+          clientPort: 24678,
+          port: 24678,
+        },
+
+        // watch: {
+        //   usePolling: true,
+        // },
       },
       define: {
         'process.env.DEBUG': false,

@@ -25,14 +25,17 @@ services:
 
   sa-frontend:
     build:
-      context: ./sa-frontend
-    command: yarn dev
+      context: .
+      dockerfile: sa-frontend/Dockerfile
     volumes:
-      - ../sa-frontend/src:/app/src
+      - ./sa-frontend:/sa-frontend
     env_file: .env
     ports:
       - 3000:3000
       - 24678:24678
+    environment:
+      NUXT_HOST: 0.0.0.0
+      NUXT_PORT: 3000
     depends_on:
       - sa-backend
     restart: always

@@ -16,7 +16,6 @@
     "stylus": "^0.58.1"
   },
   "dependencies": {
-    "axios":"^1.4.0",
     "@mdi/font": "^7.2.96",
     "@pinia/nuxt": "^0.4.8",
     "lodash": "^4.7.0",

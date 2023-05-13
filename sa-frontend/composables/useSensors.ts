@@ -3,7 +3,7 @@ export type Sensors = {
     "value": SensorType[]
 }
 
-type SensorType = {
+export type SensorType = {
     "@iot.id": number
     "@iot.selfLink": string
     "name": string
@@ -11,4 +11,11 @@ type SensorType = {
     "encodingType": string
     "metadata": string
     "Datastreams@iot.navigationLink": string
+}
+
+export type SensorUpdatePayload = {
+    name: string
+    description: string
+    encodingType: string
+    metadata: string
 }

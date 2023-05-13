@@ -1,4 +1,4 @@
-// Location requires application/geo+json for encoding types
+// Location requires "encodingType": "application/vnd.geo+json"
 export type LocationEntityType = {
     "@iot.id": number
     "@iot.selfLink": string
@@ -13,10 +13,7 @@ export type LocationEntityType = {
 // May update the 'type' type later. Point, Polygon, etc
 export type LocationType = {
     type: string
-    geometry: {
-        type: string
-        coordinates: number[]
-    }
+    coordinates: number[]
 }
 
 export type LocationEntityUpdateType = {
@@ -25,3 +22,14 @@ export type LocationEntityUpdateType = {
     encodingType: string
     location: LocationType
 }
+
+// Example
+// {
+//     "name": "Location One",
+//     "description": "Descript",
+//     "encodingType": "application/vnd.geo+json",
+//     "location": {
+//           "type": "Point",
+//           "coordinates": [-114.06,51.05]
+//     }
+// }

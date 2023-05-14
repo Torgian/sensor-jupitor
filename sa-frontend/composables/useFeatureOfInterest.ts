@@ -15,6 +15,7 @@ export type FeatureType = {
 }
 
 export type FeatureOfInterestUpdateType = {
+    "@iot.id"?: number
     name: string
     description: string
     encodingType: string

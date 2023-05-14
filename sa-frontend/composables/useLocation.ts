@@ -17,6 +17,7 @@ export type LocationType = {
 }
 
 export type LocationEntityUpdateType = {
+    "@iot.id"?: number
     name: string
     description: string
     encodingType: string

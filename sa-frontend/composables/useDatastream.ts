@@ -10,14 +10,14 @@ import { ObservedAreaType } from "./useObservedArea"
  * "Thing" does not seem to require a "location"
  */
 // "Datastream": {
-//     "name": "Air Temperature DS",
-//     "description": "Datastream for recording temperature",
-//     "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
-//     "unitOfMeasurement": {
-//         "name": "Degree Celsius",
-//         "symbol": "degC",
-//         "definition": "http://www.qudt.org/qudt/owl/1.0.0/unit/Instances.html#DegreeCelsius"
-//     },
+    // "name": "Air Temperature DS",
+    // "description": "Datastream for recording temperature",
+    // "observationType": "http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement",
+    // "unitOfMeasurement": {
+    //     "name": "Degree Celsius",
+    //     "symbol": "degC",
+    //     "definition": "http://www.qudt.org/qudt/owl/1.0.0/unit/Instances.html#DegreeCelsius"
+    // },
 //     "ObservedProperty": {
 //         "name": "Area Temperature",
 //         "description": "The degree or intensity of heat present in the area",
@@ -63,6 +63,7 @@ import { ObservedAreaType } from "./useObservedArea"
  * Thing can have an option Locations array.
  * This type is used for both POST and PUT requests
  */
+
 export type DataStreamType = {
     "@iot.id"?: number
     name: string

@@ -8,6 +8,7 @@ export type ObservedPropertyType = {
 }
 
 export type ObservedPropertyUpdateType = {
+    "@iot.id"?: number
     description: string
     name: string
     definition: string

@@ -14,6 +14,7 @@ export type SensorType = {
 }
 
 export type SensorUpdatePayload = {
+    "@iot.id"?: number
     name: string
     description: string
     encodingType: string

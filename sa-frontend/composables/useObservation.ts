@@ -10,6 +10,7 @@ export type ObservationType = {
 }
 
 export type ObservationUpdateType = {
+    "@iot.id"?: number
     phenomenonTime: Date
     resultTime: Date
     result: number

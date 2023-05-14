@@ -1,3 +1,5 @@
+import { LocationEntityUpdateType } from "./useLocation"
+
 export type ThingType = {
     "@iot.id": number
     "@iot.selfLink": string
@@ -10,7 +12,9 @@ export type ThingType = {
 }
 
 export type ThingUpdateType = {
-    "name": string
-    "description": string
-    "properties": null | {[key: string]: any}
+    "@iot.id"?: number
+    name: string
+    description: string
+    properties: null | {[key: string]: any}
+    Locations?: LocationEntityUpdateType[]
 }
